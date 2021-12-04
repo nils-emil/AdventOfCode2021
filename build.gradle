@@ -1,0 +1,8 @@
+apply plugin: 'java'
+
+group 'ee.advent'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
