@@ -23,7 +23,7 @@ public class Day9 {
         for (int x = 0; x < map.get(0).size(); x++) {
             for (int y = 0; y < map.size(); y++) {
                 int value = map.get(y).get(x);
-                boolean al = bigger(map, x, y, value);
+                boolean al = isLowSpot(map, x, y, value);
                 if (al) {
                     counter += 1 + value;
                 }
@@ -33,7 +33,7 @@ public class Day9 {
 
     }
 
-    private static boolean bigger(List<List<Integer>> map, int x, int y, int value) {
+    private static boolean isLowSpot(List<List<Integer>> map, int x, int y, int value) {
         if (x == 0 && y == 9) {
             System.out.println("");
         }
