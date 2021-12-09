@@ -6,7 +6,6 @@ import java.util.List;
 
 public class Day10 {
 
-
     public static final int DAY_NR = 10;
 
     public static void main(String[] args) {
@@ -24,6 +23,5 @@ public class Day10 {
 //        List<Integer> numbers = Arrays.stream(csvLines.get(0).split(",")).map(Integer::parseInt).collect(Collectors.toList());
 
     }
-
 
 }

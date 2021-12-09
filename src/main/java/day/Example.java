@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 
 public class Example {
 
-
     public static final int DAY_NR = 9;
 
     public static void main(String[] args) {
@@ -26,6 +25,5 @@ public class Example {
 //        List<Integer> numbers = Arrays.stream(csvLines.get(0).split(",")).map(Integer::parseInt).collect(Collectors.toList());
 
     }
-
 
 }
