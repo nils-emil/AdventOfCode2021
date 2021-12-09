@@ -38,27 +38,17 @@ public class Day9Part2 {
     private static int findBasin(int x, int y, List<String> visited, String[][] finalData) {
         int maxBasinCount = 0;
         for (int y1 = y - 1; y1 <= y + 1; y1++) {
-            boolean isNewCoordinate = !visited.contains(x + ":" + y1);
-            if (isWithInBounds(x, y, finalData)
-                    && isWithInBounds(x, y1, finalData)
-                    && isBasinFLowing(x, y, x, y1, finalData)
-                    && isNewCoordinate) {
-                System.out.println("Basin flows from " + x + ":" + y + " to " + +x + ":" + y1);
-                visited.add(x + ":" + y1);
-                int len = 1 + findBasin(x, y1, visited, finalData);
-                maxBasinCount += len;
-            }
-        }
-        for (int x1 = x - 1; x1 <= x + 1; x1++) {
-            boolean isNewCoordinate = !visited.contains(x1 + ":" + y);
-            if (isWithInBounds(x, y, finalData)
-                    && isWithInBounds(x1, y, finalData)
-                    && isBasinFLowing(x, y, x1, y, finalData)
-                    && isNewCoordinate) {
-                System.out.println("Basin flows from " + x + ":" + y + " to " + +x1 + ":" + y);
-                visited.add(x1 + ":" + y);
-                int len = 1 + findBasin(x1, y, visited, finalData);
-                maxBasinCount += len;
+            for (int x1 = x - 1; x1 <= x + 1; x1++) {
+                boolean isNewCoordinate = !visited.contains(x1 + ":" + y1);
+                if (isWithInBounds(x, y, finalData)
+                        && isWithInBounds(x1, y1, finalData)
+                        && isBasinFLowing(x, y, x1, y1, finalData)
+                        && isNewCoordinate) {
+                    System.out.println("Basin flows from " + x + ":" + y + " to " + +x1 + ":" + y1);
+                    visited.add(x1 + ":" + y1);
+                    int len = 1 + findBasin(x1, y1, visited, finalData);
+                    maxBasinCount += len;
+                }
             }
         }
         return maxBasinCount;
